@@ -7,6 +7,9 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   line-height: 1.2;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -23,6 +26,7 @@ ul {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
+  flex-grow: 1;
 }
 
 .flex {
@@ -34,6 +38,14 @@ ul {
 }
 .gap-1 {
   gap: 0 3rem;
+}
+.btn {
+  display: inline-block;
+  background-color: #4169e1;
+  color: white;
+  padding: 0.75em 1.4em;
+  border-radius: 2px;
+  font-size: 1.1rem;
 }
 
 /* Header */
@@ -61,6 +73,7 @@ ion-icon.menu {
   display: none;
 }
 
+/* Romman */
 /* Hero section */
 .hero.bg {
   background-color: #e1e6e1;
@@ -193,6 +206,7 @@ footer .container {
     max-width: 100%;
   }
 }
+/* Romman end */
 
 /* Sign up page */
 form.signup {
@@ -254,3 +268,149 @@ form.signup button[type="submit"] {
     width: 100%;
   }
 }
+
+/* Sadik start */
+/* Product listing */
+.product-listing-parent .container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 2rem;
+}
+
+.filter h4 {
+  margin-bottom: 0.6rem;
+  border-bottom: 1px solid lightgray;
+}
+
+.filter form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem 0;
+}
+
+.product-listing {
+  flex-grow: 1;
+}
+
+.product-listing .products {
+  padding: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 1rem;
+}
+.product {
+  border: 1px solid rgb(238, 238, 238);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.product .savings-pill {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: green;
+  padding: 2px 10px;
+  color: white;
+}
+
+.product-img img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.product-details {
+  flex-grow: 1;
+  padding: 1rem 0.3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-details .top {
+  flex-grow: 1;
+}
+
+.product-details h5 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.product-details h6 {
+  font-size: 0.9rem;
+  font-weight: 300;
+  margin: 7px 0 10px 0;
+}
+
+.product-details .btn {
+  font-size: 0.75rem;
+  display: block;
+  text-align: center;
+}
+
+.category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category-header a {
+  color: rgb(47, 47, 253);
+  text-decoration: underline;
+}
+
+.product-search-form input {
+  border: 1px solid lightgray;
+  padding: 0.6em 0.7em;
+  font-family: inherit;
+  font-size: 1.2rem;
+  border-radius: 4px;
+  width: 100%;
+  margin: 2rem 0;
+}
+
+button.load-more {
+  border: 1px solid #d1d1d1;
+  background-color: linear-gradient(180deg, #0000 50%, #0b151e05), #fff;
+  padding: 0.35em 1em;
+  font-size: 1.1rem;
+  color: #767676;
+  border-radius: 6px;
+  margin: 2rem auto;
+  cursor: pointer;
+}
+/* Sadik end */
+
+/* Product compare start */
+.comparison-parent {
+  flex-grow: 1;
+}
+
+.comparison-parent .container {
+  padding: 2rem 0;
+}
+
+.loader-parent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.text {
+  white-space: nowrap;
+}
+
+.compare-products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 5px;
+  display: none;
+}
+
+/* Product compare end */

@@ -23,7 +23,7 @@
           <nav>
             <ul>
               <li>
-                <a href="products.html"
+                <a href="search.html"
                   ><ion-icon name="search-outline"></ion-icon>Search</a
                 >
               </li>
@@ -49,7 +49,7 @@
                 >
               </li>
               <li>
-                <a href="signup.html"
+                <a href="#"
                   ><ion-icon name="person-outline"></ion-icon> Profile</a
                 >
               </li>
@@ -67,7 +67,7 @@
           <nav>
             <ul>
               <li>
-                <a href="products.html"
+                <a href="#"
                   ><ion-icon name="search-outline"></ion-icon>Search</a
                 >
               </li>
@@ -93,7 +93,7 @@
                 >
               </li>
               <li>
-                <a href="signup.html"
+                <a href="#"
                   ><ion-icon name="person-outline"></ion-icon> Profile</a
                 >
               </li>
@@ -110,114 +110,61 @@
     </header>
     <!-- Header end -->
 
-    <!-- Hero start -->
-    <section class="hero bg">
+    <section class="product-listing-parent">
       <div class="container">
-        <div class="hero-content">
-          <h3>We offer the best prices</h3>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Perspiciatis, excepturi!
-          </p>
-          <a
-            href="products.html"
-            class="btn"
-            style="
-              display: flex;
-              align-items: center;
-              width: fit-content;
-              gap: 0.5rem;
-            "
-            ><span>Start saving</span> <ion-icon name="cash-outline"></ion-icon
-          ></a>
+        <div class="filter">
+          <h4>Filter</h4>
+          <form>
+            <div>
+              <input type="checkbox" id="grocery" />
+              <label for="grocery">Grocery</label>
+            </div>
+            <div>
+              <input type="checkbox" id="Electronics" />
+              <label for="Electronics">Electronics</label>
+            </div>
+            <div>
+              <input type="checkbox" id="Fashion" />
+              <label for="Fashion">Fashion</label>
+            </div>
+            <div>
+              <input type="checkbox" id="Furniture" />
+              <label for="Furniture">Furniture</label>
+            </div>
+          </form>
         </div>
-        <div class="hero-img">
-          <img src="/public/images/discount.svg" alt="" />
+        <div class="product-listing">
+          <form class="product-search-form">
+            <input type="search" placeholder="Search for products" />
+          </form>
+          <!-- <div class="category">
+            <div class="category-header">
+              <h3>Grocery</h3>
+              <a href="#">See all</a>
+            </div>
+            <div class="products">
+              <div class="product">
+                <div class="product-img">
+                  <img
+                    src="/public/images/products/teer-oil.webp"
+                    alt="product"
+                  />
+                </div>
+                <div class="product-details">
+                  <h5>Teer Soyabean oil 5ltr</h5>
+                  <h6>Vendor: Teer</h6>
+                  <a href="products/compare.html?productId=233113" class="btn"
+                    >Compare price</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div> -->
+          <div id="app"></div>
+          <button class="load-more">Load more</button>
         </div>
       </div>
     </section>
-    <!-- Hero end -->
-    <!-- Hero start -->
-    <section class="hero">
-      <div class="container">
-        <div class="hero-img">
-          <img src="/public/images/shop.svg" alt="" />
-        </div>
-        <div class="hero-content">
-          <h3>Shop with confidence</h3>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Perspiciatis, excepturi!
-          </p>
-          <a
-            href="#"
-            class="btn"
-            style="
-              display: flex;
-              align-items: center;
-              width: fit-content;
-              gap: 0.5rem;
-            "
-            ><span>Compare products</span>
-            <ion-icon name="cart-outline"></ion-icon
-          ></a>
-        </div>
-      </div>
-    </section>
-    <!-- Hero end -->
-    <!-- Hero start -->
-    <section class="hero" style="background-color: #f5efe6">
-      <div class="container">
-        <div class="hero-content">
-          <h3>We do the hardwork,<br />so you dont have to</h3>
-          <p>
-            We compare products across thousands of vendors to give you the best
-            price
-          </p>
-          <a
-            href="#"
-            class="btn"
-            style="
-              display: flex;
-              align-items: center;
-              width: fit-content;
-              gap: 0.5rem;
-            "
-            ><span>Let's go 🥳</span>
-          </a>
-        </div>
-        <div class="hero-img">
-          <img src="/public/images/discount.gif" alt="" />
-        </div>
-      </div>
-    </section>
-    <!-- Hero end -->
-    <!-- Hero start -->
-    <section class="hero">
-      <div class="container">
-        <div class="hero-img">
-          <img src="/public/images/coupons.jpg" alt="" />
-        </div>
-        <div class="hero-content">
-          <h3>Use attractive vouchers,<br />save more</h3>
-          <p>Instant savings with just one click.</p>
-          <a
-            href="https://chromewebstore.google.com/detail/coupert-automatic-coupon/mfidniedemcgceagapgdekdbmanojomk"
-            target="_blank"
-            class="btn"
-            style="
-              display: flex;
-              align-items: center;
-              width: fit-content;
-              gap: 0.5rem;
-            "
-            ><span>Install the browser extension </span
-            ><ion-icon name="open-outline"></ion-icon>
-          </a>
-        </div>
-      </div>
-    </section>
-    <!-- Hero end -->
 
     <!-- Footer start -->
     <footer>
@@ -228,7 +175,7 @@
     </footer>
     <!-- Footer end -->
 
-    <script type="module" src="main.js"></script>
+    <script src="main.js" type="module"></script>
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"

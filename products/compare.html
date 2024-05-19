@@ -4,17 +4,47 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PriceSage | Your one stop for best bargain</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../style.css" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
+
+    <style>
+      /* HTML: <div class="loader"></div> */
+      .loader {
+        width: 40px;
+        aspect-ratio: 1;
+        --c: linear-gradient(#000 0 0);
+        --m: radial-gradient(farthest-side, #000 92%, #0000);
+        background: var(--c), var(--m), var(--c), var(--m), var(--c), var(--m);
+        background-size: 8px 15px, 8px 8px;
+        background-repeat: no-repeat;
+        animation: l14 1s infinite alternate;
+      }
+      @keyframes l14 {
+        0%,
+        10% {
+          background-position: 0 0, 0 100%, 50% 0, 50% 100%, 100% 0, 100% 100%;
+        }
+        33% {
+          background-position: 0 100%, 0 0, 50% 0, 50% 100%, 100% 0, 100% 100%;
+        }
+        66% {
+          background-position: 0 100%, 0 0, 50% 100%, 50% 0, 100% 0, 100% 100%;
+        }
+        90%,
+        100% {
+          background-position: 0 100%, 0 0, 50% 100%, 50% 0, 100% 100%, 100% 0;
+        }
+      }
+    </style>
   </head>
   <body>
     <!-- Header start -->
     <header>
       <div class="container">
-        <h3><a href="index.html">PriceSage</a></h3>
+        <h3><a href="../index.html">PriceSage</a></h3>
         <ion-icon name="menu-outline" class="menu"></ion-icon>
         <!-- Mobile menu start -->
         <div class="menu-overlay"></div>
@@ -49,7 +79,7 @@
                 >
               </li>
               <li>
-                <a href="signup.html"
+                <a href="../signup.html"
                   ><ion-icon name="person-outline"></ion-icon> Profile</a
                 >
               </li>
@@ -93,7 +123,7 @@
                 >
               </li>
               <li>
-                <a href="signup.html"
+                <a href="../signup.html"
                   ><ion-icon name="person-outline"></ion-icon> Profile</a
                 >
               </li>
@@ -110,114 +140,87 @@
     </header>
     <!-- Header end -->
 
-    <!-- Hero start -->
-    <section class="hero bg">
+    <section class="comparison-parent">
       <div class="container">
-        <div class="hero-content">
-          <h3>We offer the best prices</h3>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Perspiciatis, excepturi!
-          </p>
-          <a
-            href="products.html"
-            class="btn"
-            style="
-              display: flex;
-              align-items: center;
-              width: fit-content;
-              gap: 0.5rem;
-            "
-            ><span>Start saving</span> <ion-icon name="cash-outline"></ion-icon
-          ></a>
+        <div class="loader-parent">
+          <div class="loader"></div>
+          <div class="loader-text">
+            <p id="txt-1" class="text">Searching our data house</p>
+          </div>
         </div>
-        <div class="hero-img">
-          <img src="/public/images/discount.svg" alt="" />
+        <div class="compare-products">
+          <div class="product">
+            <div class="product-img">
+              <img
+                src="../public/images/products/electronics/1.jpg"
+                alt="product"
+              />
+            </div>
+            <div class="product-details">
+              <div class="top">
+                <p class="savings-pill">Best price</p>
+                <h5>Product 1</h5>
+                <h6>Vendor: Product Vendor</h6>
+                <a href="#"
+                  >View on website <ion-icon name="open-outline"></ion-icon
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="product">
+            <div class="product-img">
+              <img
+                src="../public/images/products/electronics/1.jpg"
+                alt="product"
+              />
+            </div>
+            <div class="product-details">
+              <div class="top">
+                <h5>Product 1</h5>
+                <h6>Vendor: Product Vendor</h6>
+                <a href="#"
+                  >View on website <ion-icon name="open-outline"></ion-icon
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="product">
+            <div class="product-img">
+              <img
+                src="../public/images/products/electronics/1.jpg"
+                alt="product"
+              />
+            </div>
+            <div class="product-details">
+              <div class="top">
+                <h5>Product 1</h5>
+                <h6>Vendor: Product Vendor</h6>
+                <a href="#"
+                  >View on website <ion-icon name="open-outline"></ion-icon
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="product">
+            <div class="product-img">
+              <img
+                src="../public/images/products/electronics/1.jpg"
+                alt="product"
+              />
+            </div>
+            <div class="product-details">
+              <div class="top">
+                <h5>Product 1</h5>
+                <h6>Vendor: Product Vendor</h6>
+                <a href="#"
+                  >View on website <ion-icon name="open-outline"></ion-icon
+                ></a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-    <!-- Hero end -->
-    <!-- Hero start -->
-    <section class="hero">
-      <div class="container">
-        <div class="hero-img">
-          <img src="/public/images/shop.svg" alt="" />
-        </div>
-        <div class="hero-content">
-          <h3>Shop with confidence</h3>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Perspiciatis, excepturi!
-          </p>
-          <a
-            href="#"
-            class="btn"
-            style="
-              display: flex;
-              align-items: center;
-              width: fit-content;
-              gap: 0.5rem;
-            "
-            ><span>Compare products</span>
-            <ion-icon name="cart-outline"></ion-icon
-          ></a>
-        </div>
-      </div>
-    </section>
-    <!-- Hero end -->
-    <!-- Hero start -->
-    <section class="hero" style="background-color: #f5efe6">
-      <div class="container">
-        <div class="hero-content">
-          <h3>We do the hardwork,<br />so you dont have to</h3>
-          <p>
-            We compare products across thousands of vendors to give you the best
-            price
-          </p>
-          <a
-            href="#"
-            class="btn"
-            style="
-              display: flex;
-              align-items: center;
-              width: fit-content;
-              gap: 0.5rem;
-            "
-            ><span>Let's go 🥳</span>
-          </a>
-        </div>
-        <div class="hero-img">
-          <img src="/public/images/discount.gif" alt="" />
-        </div>
-      </div>
-    </section>
-    <!-- Hero end -->
-    <!-- Hero start -->
-    <section class="hero">
-      <div class="container">
-        <div class="hero-img">
-          <img src="/public/images/coupons.jpg" alt="" />
-        </div>
-        <div class="hero-content">
-          <h3>Use attractive vouchers,<br />save more</h3>
-          <p>Instant savings with just one click.</p>
-          <a
-            href="https://chromewebstore.google.com/detail/coupert-automatic-coupon/mfidniedemcgceagapgdekdbmanojomk"
-            target="_blank"
-            class="btn"
-            style="
-              display: flex;
-              align-items: center;
-              width: fit-content;
-              gap: 0.5rem;
-            "
-            ><span>Install the browser extension </span
-            ><ion-icon name="open-outline"></ion-icon>
-          </a>
-        </div>
-      </div>
-    </section>
-    <!-- Hero end -->
 
     <!-- Footer start -->
     <footer>
@@ -228,7 +231,7 @@
     </footer>
     <!-- Footer end -->
 
-    <script type="module" src="main.js"></script>
+    <script type="module" src="./compare.js"></script>
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
