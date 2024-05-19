@@ -233,11 +233,24 @@ form.signup button[type="submit"] {
 
 .container.form-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .form-container div h5 {
-  font-size: 3rem;
-  font-weight: normal;
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-weight: 300;
+  line-height: 0.95;
+}
+
+.form-container div h5 span {
+  font-size: clamp(3rem, 4vw, 5rem);
+  font-weight: 400;
+}
+
+@media screen and (max-width: 640px) {
+  form.signup {
+    width: 100%;
+  }
 }
