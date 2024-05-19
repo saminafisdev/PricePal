@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PriceSage | Your one stop for best bargain</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <style>
+      /* HTML: <div class="loader"></div> */
+      .loader {
+        width: 80px;
+        aspect-ratio: 2;
+        --c: linear-gradient(
+          #ffd412 25%,
+          #abd406 0 50%,
+          #ff821c 0 75%,
+          #ffd412 0
+        );
+        background: var(--c), var(--c), var(--c), var(--c);
+        background-size: 26% 400%;
+        background-position: calc(0 * 100% / 3) 100%, calc(1 * 100% / 3) 100%,
+          calc(2 * 100% / 3) 100%, calc(3 * 100% / 3) 100%;
+        background-repeat: no-repeat;
+        animation: l10 2s infinite;
+      }
+      @keyframes l10 {
+        0% {
+          background-position: calc(0 * 100% / 3) calc(3 * 100% / 3),
+            calc(1 * 100% / 3) calc(3 * 100% / 3),
+            calc(2 * 100% / 3) calc(3 * 100% / 3),
+            calc(3 * 100% / 3) calc(3 * 100% / 3);
+        }
+        8.33% {
+          background-position: calc(0 * 100% / 3) calc(2 * 100% / 3),
+            calc(1 * 100% / 3) calc(3 * 100% / 3),
+            calc(2 * 100% / 3) calc(3 * 100% / 3),
+            calc(3 * 100% / 3) calc(3 * 100% / 3);
+        }
+        16.67% {
+          background-position: calc(0 * 100% / 3) calc(2 * 100% / 3),
+            calc(1 * 100% / 3) calc(2 * 100% / 3),
+            calc(2 * 100% / 3) calc(3 * 100% / 3),
+            calc(3 * 100% / 3) calc(3 * 100% / 3);
+        }
+        25% {
+          background-position: calc(0 * 100% / 3) calc(2 * 100% / 3),
+            calc(1 * 100% / 3) calc(2 * 100% / 3),
+            calc(2 * 100% / 3) calc(2 * 100% / 3),
+            calc(3 * 100% / 3) calc(3 * 100% / 3);
+        }
+        30%,
+        33.33% {
+          background-position: calc(0 * 100% / 3) calc(2 * 100% / 3),
+            calc(1 * 100% / 3) calc(2 * 100% / 3),
+            calc(2 * 100% / 3) calc(2 * 100% / 3),
+            calc(3 * 100% / 3) calc(2 * 100% / 3);
+        }
+        41.67% {
+          background-position: calc(0 * 100% / 3) calc(1 * 100% / 3),
+            calc(1 * 100% / 3) calc(2 * 100% / 3),
+            calc(2 * 100% / 3) calc(2 * 100% / 3),
+            calc(3 * 100% / 3) calc(2 * 100% / 3);
+        }
+        50% {
+          background-position: calc(0 * 100% / 3) calc(1 * 100% / 3),
+            calc(1 * 100% / 3) calc(1 * 100% / 3),
+            calc(2 * 100% / 3) calc(2 * 100% / 3),
+            calc(3 * 100% / 3) calc(2 * 100% / 3);
+        }
+        58.33% {
+          background-position: calc(0 * 100% / 3) calc(1 * 100% / 3),
+            calc(1 * 100% / 3) calc(1 * 100% / 3),
+            calc(2 * 100% / 3) calc(1 * 100% / 3),
+            calc(3 * 100% / 3) calc(2 * 100% / 3);
+        }
+        63%,
+        66.67% {
+          background-position: calc(0 * 100% / 3) calc(1 * 100% / 3),
+            calc(1 * 100% / 3) calc(1 * 100% / 3),
+            calc(2 * 100% / 3) calc(1 * 100% / 3),
+            calc(3 * 100% / 3) calc(1 * 100% / 3);
+        }
+        75% {
+          background-position: calc(0 * 100% / 3) calc(0 * 100% / 3),
+            calc(1 * 100% / 3) calc(1 * 100% / 3),
+            calc(2 * 100% / 3) calc(1 * 100% / 3),
+            calc(3 * 100% / 3) calc(1 * 100% / 3);
+        }
+        83.33% {
+          background-position: calc(0 * 100% / 3) calc(0 * 100% / 3),
+            calc(1 * 100% / 3) calc(0 * 100% / 3),
+            calc(2 * 100% / 3) calc(1 * 100% / 3),
+            calc(3 * 100% / 3) calc(1 * 100% / 3);
+        }
+        91.67% {
+          background-position: calc(0 * 100% / 3) calc(0 * 100% / 3),
+            calc(1 * 100% / 3) calc(0 * 100% / 3),
+            calc(2 * 100% / 3) calc(0 * 100% / 3),
+            calc(3 * 100% / 3) calc(1 * 100% / 3);
+        }
+        97%,
+        100% {
+          background-position: calc(0 * 100% / 3) calc(0 * 100% / 3),
+            calc(1 * 100% / 3) calc(0 * 100% / 3),
+            calc(2 * 100% / 3) calc(0 * 100% / 3),
+            calc(3 * 100% / 3) calc(0 * 100% / 3);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header start -->
+    <header>
+      <div class="container">
+        <h3><a href="index.html">PriceSage</a></h3>
+        <ion-icon name="menu-outline" class="menu"></ion-icon>
+        <!-- Mobile menu start -->
+        <div class="menu-overlay"></div>
+        <div class="sidebar">
+          <ion-icon name="close-outline" class="close"></ion-icon>
+          <nav>
+            <ul>
+              <li>
+                <a href="products.html"
+                  ><ion-icon name="search-outline"></ion-icon>Search</a
+                >
+              </li>
+
+              <li>
+                <a href="deals.html"
+                  ><ion-icon name="flame-outline" style="color: red"></ion-icon>
+                  Deals</a
+                >
+              </li>
+              <li>
+                <a href="trends.html"
+                  ><ion-icon
+                    name="trending-up-outline"
+                    style="color: green"
+                  ></ion-icon>
+                  Price Trends</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><ion-icon name="call-outline"></ion-icon> Support</a
+                >
+              </li>
+              <li>
+                <a href="signup.html"
+                  ><ion-icon name="person-outline"></ion-icon> Profile</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><ion-icon name="notifications-outline"></ion-icon>
+                  Notification</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <!-- Mobile menu end -->
+        <div class="desktop-menu">
+          <nav>
+            <ul>
+              <li>
+                <a href="products.html"
+                  ><ion-icon name="search-outline"></ion-icon>Search</a
+                >
+              </li>
+
+              <li>
+                <a href="deals.html"
+                  ><ion-icon name="flame-outline" style="color: red"></ion-icon>
+                  Deals</a
+                >
+              </li>
+              <li>
+                <a href="trends.html"
+                  ><ion-icon
+                    name="trending-up-outline"
+                    style="color: green"
+                  ></ion-icon>
+                  Price Trends</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><ion-icon name="call-outline"></ion-icon> Support</a
+                >
+              </li>
+              <li>
+                <a href="signup.html"
+                  ><ion-icon name="person-outline"></ion-icon> Profile</a
+                >
+              </li>
+              <li class="notification" id="notification-btn">
+                <a href="#">
+                  <span class="notification-icon">
+                    <ion-icon name="notifications-outline"></ion-icon>
+                  </span>
+                </a>
+                <ul class="sub-menu">
+                  <li>
+                    <ion-icon name="chevron-forward-outline"></ion-icon> Aarong
+                    has Winter Sales ❄️
+                  </li>
+                  <li class="unread">
+                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                    Congrats! You just earned points! Reedem now!
+                  </li>
+                  <li>
+                    <ion-icon name="chevron-forward-outline"></ion-icon> Meena
+                    Baazar has discounts! Check them out!
+                  </li>
+                  <li>
+                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                    Discount on groceries at Shwapno!
+                  </li>
+                  <li class="unread">
+                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                    Startech has a new event! Nightly discounts. Get upto 30%
+                    discounts on selected products 🤑
+                  </li>
+                  <li class="unread">
+                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                    Use bKash for your next purchase and avail exciting
+                    discounts
+                  </li>
+                  <li>
+                    <ion-icon name="chevron-forward-outline"></ion-icon> Meena
+                    Baazar has discounts! Check them out!
+                  </li>
+                  <li>
+                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                    Discount on groceries at Shwapno!
+                  </li>
+                  <li class="unread">
+                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                    Startech has a new event! Nightly discounts. Get upto 30%
+                    discounts on selected products
+                  </li>
+                  <li>
+                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                    Use bKash for your next purchase and avail exciting
+                    discounts
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- Header end -->
+
+    <!-- Modal start -->
+    <div class="modal-overlay"></div>
+    <div class="intro-modal">
+      <div class="slider1 slider">
+        <div class="modal-image">
+          <img src="./public/images/trends.svg" alt="trends" />
+        </div>
+        <div class="modal-content">
+          <h3>Get price predictions</h3>
+          <p>
+            Our
+            <span style="color: #4169e1; font-weight: 500">in house</span>
+            Machine Learning algorithms give you insights to trending market
+            rates.
+          </p>
+          <button class="btn" style="margin-top: 1rem" id="generate-btn">
+            Generate
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Modal End -->
+
+    <!-- Trend chart start -->
+    <!-- Modal start -->
+    <div class="trend-modal-parent">
+      <div class="modal-overlay" id="trend-overlay"></div>
+      <div class="trend-modal">
+        <ion-icon
+          name="close-circle-outline"
+          class="modal-close-btn"
+        ></ion-icon>
+        <div class="slider1 slider">
+          <div
+            class="chart-container"
+            style="position: relative; height: 100%; width: 100%"
+          >
+            <canvas id="trend-chart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal End -->
+    <!-- Trend chart end -->
+    <section class="trends">
+      <div class="container">
+        <div class="loader-parent">
+          <div class="loader"></div>
+          <div class="loader-text">
+            <p id="txt-1" class="text">Generating predictions</p>
+          </div>
+        </div>
+
+        <div class="predicted-product-listing">
+          <div class="product">
+            <div class="product-img">
+              <img
+                src="./public/images/products/grocery/1.jpg"
+                alt="Teer Soyabean Oil 5ltr"
+              />
+            </div>
+            <div class="product-details">
+              <div class="top">
+                <h5>Eggs</h5>
+                <h6>Vendor: Teer</h6>
+                <p class="price-change">
+                  <span class="prev-price">৳2000</span
+                  ><ion-icon name="arrow-forward-outline"></ion-icon
+                  ><span style="position: relative; overflow: hidden"
+                    ><span class="new-price" style="color: green">৳1950</span
+                    ><span style="visibility: hidden">৳1950</span></span
+                  >
+                </p>
+                <button class="btn trend-btn">See trend</button>
+              </div>
+            </div>
+          </div>
+          <div class="product">
+            <div class="product-img">
+              <img
+                src="./public/images/products/grocery/2.jpg"
+                alt="Teer Soyabean Oil 5ltr"
+              />
+            </div>
+            <div class="product-details">
+              <div class="top">
+                <h5>Teer Soyabean Oil 5ltr</h5>
+                <h6>Vendor: Teer</h6>
+                <p class="price-change">
+                  <span class="prev-price">৳800</span
+                  ><ion-icon name="arrow-forward-outline"></ion-icon
+                  ><span style="position: relative; overflow: hidden"
+                    ><span class="new-price" style="color: green">৳750</span
+                    ><span style="visibility: hidden">৳750</span></span
+                  >
+                </p>
+                <button class="btn trend-btn">See trend</button>
+              </div>
+            </div>
+          </div>
+          <div class="product">
+            <div class="product-img">
+              <img
+                src="./public/images/products/grocery/3.jpg"
+                alt="Teer Soyabean Oil 5ltr"
+              />
+            </div>
+            <div class="product-details">
+              <div class="top">
+                <h5>Cauliflower (Cabbage)</h5>
+                <h6>Vendor: Teer</h6>
+                <p class="price-change">
+                  <span class="prev-price">৳1400</span
+                  ><ion-icon name="arrow-forward-outline"></ion-icon
+                  ><span style="position: relative; overflow: hidden"
+                    ><span class="new-price" style="color: green">৳1250</span
+                    ><span style="visibility: hidden">৳1250</span></span
+                  >
+                </p>
+                <button class="btn trend-btn">See trend</button>
+              </div>
+            </div>
+          </div>
+          <div class="product">
+            <div class="product-img">
+              <img
+                src="./public/images/products/grocery/4.jpg"
+                alt="Teer Soyabean Oil 5ltr"
+              />
+            </div>
+            <div class="product-details">
+              <div class="top">
+                <h5>Shaad Atta</h5>
+                <h6>Vendor: Teer</h6>
+                <p class="price-change">
+                  <span class="prev-price">৳800</span
+                  ><ion-icon name="arrow-forward-outline"></ion-icon
+                  ><span style="position: relative; overflow: hidden"
+                    ><span class="new-price" style="color: red">৳850</span
+                    ><span style="visibility: hidden">৳850</span></span
+                  >
+                </p>
+                <button class="btn trend-btn">See trend</button>
+              </div>
+            </div>
+          </div>
+          <div class="product">
+            <div class="product-img">
+              <img
+                src="./public/images/products/grocery/5.jpg"
+                alt="Teer Soyabean Oil 5ltr"
+              />
+            </div>
+            <div class="product-details">
+              <div class="top">
+                <h5>Green beans</h5>
+                <h6>Vendor: Teer</h6>
+                <p class="price-change">
+                  <span class="prev-price">৳800</span
+                  ><ion-icon name="arrow-forward-outline"></ion-icon
+                  ><span style="position: relative; overflow: hidden"
+                    ><span class="new-price" style="color: green">৳750</span
+                    ><span style="visibility: hidden">৳750</span></span
+                  >
+                </p>
+                <button class="btn trend-btn">See trend</button>
+              </div>
+            </div>
+          </div>
+          <div class="product">
+            <div class="product-img">
+              <img
+                src="./public/images/products/grocery/6.jpg"
+                alt="Teer Soyabean Oil 5ltr"
+              />
+            </div>
+            <div class="product-details">
+              <div class="top">
+                <h5>Lal Shak</h5>
+                <h6>Vendor: Teer</h6>
+                <p class="price-change">
+                  <span class="prev-price">৳300</span
+                  ><ion-icon name="arrow-forward-outline"></ion-icon
+                  ><span style="position: relative; overflow: hidden"
+                    ><span class="new-price" style="color: red">৳320</span
+                    ><span style="visibility: hidden">৳320</span></span
+                  >
+                </p>
+                <button class="btn trend-btn">See trend</button>
+              </div>
+            </div>
+          </div>
+          <div class="product">
+            <div class="product-img">
+              <img
+                src="./public/images/products/grocery/7.jpg"
+                alt="Teer Soyabean Oil 5ltr"
+              />
+            </div>
+            <div class="product-details">
+              <div class="top">
+                <h5>Green beans</h5>
+                <h6>Vendor: Teer</h6>
+                <p class="price-change">
+                  <span class="prev-price">৳800</span
+                  ><ion-icon name="arrow-forward-outline"></ion-icon
+                  ><span style="position: relative; overflow: hidden"
+                    ><span class="new-price" style="color: green">৳750</span
+                    ><span style="visibility: hidden">৳750</span></span
+                  >
+                </p>
+                <button class="btn trend-btn">See trend</button>
+              </div>
+            </div>
+          </div>
+          <div class="product">
+            <div class="product-img">
+              <img
+                src="./public/images/products/grocery/5.jpg"
+                alt="Teer Soyabean Oil 5ltr"
+              />
+            </div>
+            <div class="product-details">
+              <div class="top">
+                <h5>Green beans</h5>
+                <h6>Vendor: Teer</h6>
+                <p class="price-change">
+                  <span class="prev-price">৳800</span
+                  ><ion-icon name="arrow-forward-outline"></ion-icon
+                  ><span style="position: relative; overflow: hidden"
+                    ><span class="new-price" style="color: green">৳750</span
+                    ><span style="visibility: hidden">৳750</span></span
+                  >
+                </p>
+                <button class="btn trend-btn">See trend</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer start -->
+    <footer>
+      <div class="container">
+        <h5>PriceSage &copy; 2024</h5>
+        <small>All rights reserved</small>
+      </div>
+    </footer>
+    <!-- Footer end -->
+
+    <script type="module" src="header.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="trends.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+  </body>
+</html>

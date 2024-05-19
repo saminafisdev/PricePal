@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Create an account - PriceSage</title>
+    <title>PriceSage | Your one stop for best bargain</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -157,55 +157,69 @@
     </header>
     <!-- Header end -->
 
-    <!-- Signup start -->
-    <div class="container form-container">
-      <div>
-        <h5>
-          You are
-          <span>1 step</span> away <br />from massive savings
-        </h5>
+    <section class="profile-parent">
+      <div class="container">
+        <div class="left-sidebar">
+          <form>
+            <div class="sidebar-menu-item">
+              <input type="radio" name="sidebar-menu-select" id="profile" />
+              <label for="profile"
+                ><ion-icon name="person-circle-outline"></ion-icon> Account
+                center</label
+              >
+            </div>
+            <div class="sidebar-menu-item">
+              <input type="radio" name="sidebar-menu-select" id="coupons" />
+              <label for="coupons"
+                ><ion-icon name="ticket-outline"></ion-icon> Saved Coupons
+              </label>
+            </div>
+            <div class="sidebar-menu-item">
+              <input type="radio" name="sidebar-menu-select" id="points" />
+              <label for="points"
+                ><ion-icon name="flash-outline"></ion-icon> Your Points</label
+              >
+            </div>
+          </form>
+        </div>
+        <div class="right-sidebar">
+          <div class="profile-parent">
+            <div class="profile-info">
+              <img
+                src="https://avataaars.io/?avatarStyle=Circle&topType=NoHair&accessoriesType=Blank&facialHairType=Blank&clotheType=BlazerSweater&eyeType=Surprised&eyebrowType=RaisedExcited&mouthType=Twinkle&skinColor=Tanned"
+              />
+              <p>Hello, User1</p>
+            </div>
+            <div class="profile-edit">
+              <form>
+                <div>
+                  <label> Name </label>
+                  <input type="text" value="Nafis Bob" />
+                </div>
+                <div>
+                  <label>Email </label>
+                  <input type="email" value="nafis@email.com" />
+                </div>
+                <div>
+                  <label> Gender </label>
+                  <select name="gender" id="gender">
+                    <option value="Male" selected>Male</option>
+                    <option value="Female">Female</option>
+                  </select>
+                </div>
+                <button class="btn">Save</button>
+              </form>
+            </div>
+          </div>
+          <div class="coupons">
+            <ion-icon name="ticket-outline"></ion-icon>
+            <div>
+              <p>You will see your saved coupons here</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <!-- Form start -->
-      <form action="products.html" method="post" class="signup">
-        <h3>Create an account</h3>
-        <div>
-          <label for="email">Email <sup style="color: red">*</sup></label>
-          <input
-            type="email"
-            name="email"
-            placeholder="Enter email address"
-            id="email"
-            required
-          />
-        </div>
-        <div>
-          <label for="password1"
-            >Enter password <sup style="color: red">*</sup></label
-          >
-          <input
-            type="password"
-            name="password1"
-            placeholder="min. 8 characters"
-            id="password1"
-            required
-          />
-          <input
-            type="password"
-            name="password2"
-            placeholder="Confirm password"
-            id="password2"
-            required
-          />
-        </div>
-        <div>
-          <label for="birthday">Enter your birthday</label>
-          <input type="date" name="user-birthday" id="birthday" />
-        </div>
-        <button type="submit">Sign up</button>
-      </form>
-      <!-- Form end -->
-    </div>
-    <!-- Signup end -->
+    </section>
 
     <!-- Footer start -->
     <footer>
@@ -217,7 +231,7 @@
     <!-- Footer end -->
 
     <script type="module" src="header.js"></script>
-    <script src="main.js"></script>
+    <script type="module" src="main.js"></script>
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Create an account - PriceSage</title>
+    <title>PriceSage | Your one stop for best bargain</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -157,55 +157,119 @@
     </header>
     <!-- Header end -->
 
-    <!-- Signup start -->
-    <div class="container form-container">
-      <div>
-        <h5>
-          You are
-          <span>1 step</span> away <br />from massive savings
-        </h5>
+    <!-- Hero start -->
+    <section class="hero bg">
+      <div class="container">
+        <div class="hero-img">
+          <img src="/public/images/deals.svg" alt="" />
+        </div>
+        <div class="hero-content">
+          <h3>Enjoy discounts as they roll out</h3>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Perspiciatis, excepturi!
+          </p>
+          <a
+            href="#deals"
+            class="btn"
+            style="
+              display: flex;
+              align-items: center;
+              width: fit-content;
+              gap: 0.5rem;
+            "
+            ><span>See deals</span>
+          </a>
+        </div>
       </div>
-      <!-- Form start -->
-      <form action="products.html" method="post" class="signup">
-        <h3>Create an account</h3>
-        <div>
-          <label for="email">Email <sup style="color: red">*</sup></label>
-          <input
-            type="email"
-            name="email"
-            placeholder="Enter email address"
-            id="email"
-            required
-          />
+    </section>
+    <!-- Hero end -->
+
+    <section class="deals-parent" id="deals">
+      <div class="container">
+        <h3>Exciting Deals⚡</h3>
+        <div class="deals-listing">
+          <div class="product">
+            <div class="product-img">
+              <img src="./public/images/stores/aarong.jpg" alt="Aarong" />
+            </div>
+            <div class="product-details">
+              <div class="top">
+                <h5>Aarong Summer Sale</h5>
+                <a href="#" style="text-decoration: underline; color: blue"
+                  >Check on website <ion-icon name="open-outline"></ion-icon
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="product">
+            <div class="product-img">
+              <img src="./public/images/stores/bata.png" alt="Aarong" />
+            </div>
+            <div class="product-details">
+              <div class="top">
+                <h5>Aarong Summer Sale</h5>
+                <a href="#" style="text-decoration: underline; color: blue"
+                  >Check on website <ion-icon name="open-outline"></ion-icon
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="product">
+            <div class="product-img">
+              <img src="./public/images/stores/meena-bazar.png" alt="Aarong" />
+            </div>
+            <div class="product-details">
+              <div class="top">
+                <h5>Aarong Summer Sale</h5>
+                <a href="#" style="text-decoration: underline; color: blue"
+                  >Check on website <ion-icon name="open-outline"></ion-icon
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="product">
+            <div class="product-img">
+              <img src="./public/images/stores/aarong.jpg" alt="Aarong" />
+            </div>
+            <div class="product-details">
+              <div class="top">
+                <h5>Aarong Summer Sale</h5>
+                <a href="#" style="text-decoration: underline; color: blue"
+                  >Check on website <ion-icon name="open-outline"></ion-icon
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="product">
+            <div class="product-img">
+              <img src="./public/images/stores/aarong.jpg" alt="Aarong" />
+            </div>
+            <div class="product-details">
+              <div class="top">
+                <h5>Aarong Summer Sale</h5>
+                <a href="#" style="text-decoration: underline; color: blue"
+                  >Check on website <ion-icon name="open-outline"></ion-icon
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="product">
+            <div class="product-img">
+              <img src="./public/images/stores/aarong.jpg" alt="Aarong" />
+            </div>
+            <div class="product-details">
+              <div class="top">
+                <h5>Aarong Summer Sale</h5>
+                <a href="#" style="text-decoration: underline; color: blue"
+                  >Check on website <ion-icon name="open-outline"></ion-icon
+                ></a>
+              </div>
+            </div>
+          </div>
         </div>
-        <div>
-          <label for="password1"
-            >Enter password <sup style="color: red">*</sup></label
-          >
-          <input
-            type="password"
-            name="password1"
-            placeholder="min. 8 characters"
-            id="password1"
-            required
-          />
-          <input
-            type="password"
-            name="password2"
-            placeholder="Confirm password"
-            id="password2"
-            required
-          />
-        </div>
-        <div>
-          <label for="birthday">Enter your birthday</label>
-          <input type="date" name="user-birthday" id="birthday" />
-        </div>
-        <button type="submit">Sign up</button>
-      </form>
-      <!-- Form end -->
-    </div>
-    <!-- Signup end -->
+      </div>
+    </section>
 
     <!-- Footer start -->
     <footer>
@@ -217,7 +281,7 @@
     <!-- Footer end -->
 
     <script type="module" src="header.js"></script>
-    <script src="main.js"></script>
+    <script type="module" src="main.js"></script>
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"

@@ -46,6 +46,91 @@ ul {
   padding: 0.75em 1.4em;
   border-radius: 2px;
   font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+}
+
+/* Submenu */
+.notification {
+  position: relative;
+}
+
+.notification-icon {
+  position: relative;
+}
+
+.notification-icon::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  width: 5px;
+  height: 5px;
+  border-radius: 100%;
+  background-color: rgba(255, 0, 0, 0.788);
+  animation: notification-pulse 1s ease-in-out infinite;
+}
+
+@keyframes notification-pulse {
+  0% {
+    scale: 0;
+  }
+  15% {
+    scale: 0;
+  }
+  25% {
+    scale: 1;
+  }
+  50% {
+    scale: 1;
+  }
+  75% {
+    scale: 1;
+  }
+  85% {
+    scale: 0;
+  }
+  100% {
+    scale: 0;
+  }
+}
+
+.notification .sub-menu {
+  display: none;
+  flex-direction: column;
+  align-items: baseline;
+  gap: 2px 0;
+  box-shadow: 0 30px 30px 15px rgba(0, 0, 0, 0.2);
+  background-color: #eee;
+  border-radius: 4px;
+  height: 400px;
+  width: 400px;
+  overflow-y: scroll;
+  margin-top: 1rem;
+  position: absolute;
+  transform: translateX(-50%);
+  z-index: 9999999;
+}
+
+.sub-menu li {
+  background-color: #fff;
+  padding: 1rem 0.7rem;
+  width: 100%;
+  color: #333;
+  cursor: pointer;
+}
+
+.sub-menu li:last-child,
+.sub-menu li:first-child {
+  border-radius: inherit;
+}
+
+.notification .unread {
+  background-color: #4169e13b;
+}
+
+.notification-menu-toggle {
+  display: block !important;
 }
 
 /* Header */
@@ -97,6 +182,8 @@ ion-icon.menu {
 }
 
 .hero-content {
+  width: 50%;
+  min-width: 350px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -414,3 +501,284 @@ button.load-more {
 }
 
 /* Product compare end */
+
+/* Trends start */
+.trends {
+  flex-grow: 1;
+}
+
+.trends .container {
+  padding-bottom: 2rem;
+}
+
+.intro-modal {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  min-width: 300px;
+  max-width: 1000px;
+  width: 30%;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
+  background-color: white;
+  border-radius: 4px;
+}
+
+.intro-modal .slider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem 0;
+  padding: 3rem;
+}
+
+.modal-image,
+.modal-content {
+  width: 80%;
+}
+
+.intro-modal img {
+  max-width: 100%;
+}
+
+.modal-content {
+  text-align: center;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  color: #4169e1;
+  cursor: pointer;
+  z-index: 101;
+}
+
+.modal-content h3 {
+  color: #333;
+  margin-bottom: 1rem;
+  line-height: 1;
+  font-size: clamp(1rem, 2.3vw, 4rem);
+}
+.modal-content p {
+  font-size: clamp(1rem, 0.9vw, 3rem);
+  color: #777;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100dvh;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 99;
+}
+
+.trend-modal-parent {
+  display: none;
+}
+
+.trend-modal {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  min-width: 300px;
+  max-width: 1000px;
+  width: 40%;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
+  background-color: white;
+  border-radius: 4px;
+  padding: 2rem;
+}
+
+.show-trend {
+  display: block;
+}
+
+.predicted-product-listing {
+  display: none;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.price-change {
+  display: flex;
+  align-items: center;
+  gap: 0 10px;
+  font-size: 1.1rem;
+  position: relative;
+}
+
+.price-change .prev-price {
+  position: relative;
+}
+.price-change .prev-price::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+  width: 100%;
+  height: 1px;
+  background-color: red;
+  animation: price-animation 700ms ease-in-out forwards;
+  transform-origin: left;
+  transform: scaleX(0);
+}
+
+@keyframes price-animation {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+.price-change .new-price {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  transform-origin: top;
+  animation: new-price-animation 700ms linear forwards;
+  animation-delay: 800ms;
+}
+
+@keyframes new-price-animation {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.trend-btn {
+  display: block;
+  font-size: 1rem !important;
+  margin: 0.8rem 0;
+  width: 100%;
+  cursor: pointer;
+}
+/* Trends end */
+
+/* Deals start */
+.deals-parent .container {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.deals-parent h3 {
+  font-size: 2rem;
+  font-weight: 400;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.deals-listing {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+/* Deals end */
+
+/* Profile start */
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 3rem;
+}
+
+.profile-info p {
+  font-size: 1.5rem;
+  margin-top: 0.7rem;
+}
+.profile-edit form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem 0;
+}
+.profile-edit form div {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  align-items: center;
+}
+.profile-edit form div label {
+  font-size: 1.1rem;
+}
+
+.profile-edit form input,
+.profile-edit form select {
+  border: 1px solid #ccc;
+  padding: 0.6em;
+  font-size: 1rem;
+  border-radius: 4px;
+}
+
+.profile-edit form *:focus {
+  border: 2px solid rgba(135, 207, 235, 0.842);
+  outline: 2px solid rgb(84, 192, 235);
+  outline-offset: 2px;
+}
+
+.profile-parent .container {
+  display: grid;
+  grid-template-columns: 4fr 8fr;
+}
+
+/* .profile-parent .left-sidebar {
+  background-color: #f6f5f2;
+} */
+
+.profile-parent .left-sidebar form {
+  padding: 3rem 1rem;
+  font-size: 1.3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-parent .left-sidebar form div {
+  padding: 1rem 0;
+}
+
+.profile-parent .left-sidebar form div:not(:last-child) {
+  border-bottom: 1px solid #ddd;
+}
+
+.profile-parent .left-sidebar form input[type="radio"] {
+  /* display: none; */
+}
+
+.right-sidebar {
+  position: relative;
+}
+
+.right-sidebar * {
+  /* display: none; */
+}
+
+.coupons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  display: none;
+}
+
+.coupons ion-icon {
+  font-size: clamp(3rem, 5vw, 100px);
+  margin-bottom: 2rem;
+  color: #4169e1;
+}
+
+/* Profile end */
